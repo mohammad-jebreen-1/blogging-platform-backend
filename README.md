@@ -20,7 +20,7 @@ A robust RESTful API backend for a blogging platform, built with Node.js, Expres
 
 ### Image Storage:
 - Upload and store images for blog posts.
-- Serve images via API endpoints.
+- Serve images via API endpoint.
 
 ### Database:
 - PostgreSQL for data storage.
@@ -97,6 +97,12 @@ To run the tests, execute the following command:
 npm test
 ```
 
+## Linting
+To lint the code and fix issues automatically, run:
+```bash
+ npm run lint --fix
+```
+
 ## Environment Variables
 The following environment variables are required:
 
@@ -135,3 +141,6 @@ docker-compose down
 ```bash
 docker-compose restart
 ```
+
+## Database Diagram
+<img width="669" alt="Screenshot 2025-03-22 at 9 03 54 PM" src="https://github.com/user-attachments/assets/4406410c-506e-4051-b7e6-480a337b6051" />
