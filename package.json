@@ -1,0 +1,43 @@
+{
+  "name": "blogging-platform-backend",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config ./app.js",
+    "test": "c8 -c ./unit.c8rc mocha 'tests/unit/**/*.spec.*'",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.3",
+    "c8": "^10.1.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-async-router": "^0.1.15",
+    "express-joi-validation": "^6.0.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.14.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.6",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "chai": "^5.2.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "mocha": "^11.1.0",
+    "nodemon": "^3.1.9",
+    "sinon": "^19.0.4"
+  }
+}

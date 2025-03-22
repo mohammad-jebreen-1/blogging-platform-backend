@@ -1,0 +1,37 @@
+version: '1'
+
+services:
+  app:
+    container_name: blogging-platform-backend
+    build:
+      context: .
+    environment:
+      - APP_ENVIRONMENT=development
+      - SERVER_PORT=3500
+      - CORS_ORIGIN=*
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=postgres
+      - DB_HOST=blogging-postgres-db
+      - DB_PORT=5432
+      - PASSWORD_SALT_ROUNDS=10
+      - ACCESS_TOKEN_EXPIRY=36000
+      - ACCESS_TOKEN_SECRET=secret
+    volumes:
+      - ${PWD}:/app
+    ports:
+      - "3500:3500"
+    depends_on:
+      - blogging-platform-db
+    command: npm run start
+
+  # PostgreSQL Database
+  blogging-platform-db:
+    container_name: blogging-postgres-db
+    image: postgres:14
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "54321:5432"
